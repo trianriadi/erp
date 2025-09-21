@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* Light gray */
+    --foreground: 222.2 84% 4.9%; /* Dark gray */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 222.2 84% 4.9%; /* Dark gray */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 222.2 84% 4.9%; /* Dark gray */
+    --primary: 200 80% 60%; /* Light blue */
+    --primary-foreground: 210 20% 98%; /* Light gray */
+    --secondary: 210 20% 90%; /* Another light gray */
+    --secondary-foreground: 222.2 84% 4.9%; /* Dark gray */
+    --muted: 210 20% 90%; /* Another light gray */
+    --muted-foreground: 215 20.2% 65.1%; /* Medium gray */
+    --accent: 210 20% 90%; /* Another light gray */
+    --accent-foreground: 222.2 84% 4.9%; /* Dark gray */
+    --destructive: 0 62.8% 30.6%; /* Red */
+    --destructive-foreground: 210 40% 98%; /* Light gray */
+    --border: 214.3 31.8% 91.4%; /* Light border gray */
+    --input: 214.3 31.8% 91.4%; /* Light input gray */
+    --ring: 200 80% 60%; /* Light blue */
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #e0e7ed 0%, #d1d8e0 50%, #c4cfd9 100%); /* Light gray-blue gradient */
+  min-height: 100vh;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.6); /* More visible glass effect */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe); /* Light blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
